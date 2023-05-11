@@ -345,6 +345,7 @@ test_evol <- data.frame(dates = index(test_data_prices),
 #test_market_evol <- data.frame(dates = index(test_data), market_price = exp(cumsum( tail(log_market_prices_xts$`^GSPC`,nrow(test_maxsr_evol)) )) * 100)
 test_evol_long <- test_evol %>% pivot_longer(-"dates")
 
+### GRAPH EVOLUTION OF DIFFERENT PORTFOLIIOS VS MARKET (S&P 500)
 
 ggplot(test_evol_long)+
   geom_line(aes(x = dates, y = value, color = name, group = name),linewidth = 0.7)+
